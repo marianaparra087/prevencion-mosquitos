@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Alto a los Mosquitos!</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f8e9;
+            color: #263238;
+        }
+
+        header {
+            background: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        nav {
+            background: #1b5e20;
+            text-align: center;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #c8e6c9;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: 35px auto;
+            padding: 25px;
+        }
+
+        section h2 {
+            color: #2e7d32;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+
+        .intro {
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .card span {
+            font-size: 40px;
+        }
+
+        .card h3 {
+            margin: 12px 0;
+            color: #388e3c;
+        }
+
+        .card p {
+            line-height: 1.5;
+        }
+
+        .tips {
+            background: #dcedc8;
+            border-radius: 15px;
+        }
+
+        .tips li {
+            margin: 15px 0;
+            font-size: 18px;
+            list-style: none;
+        }
+
+        .important {
+            background: #fff8e1;
+            border-left: 6px solid #f9a825;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .button {
+            display: block;
+            width: fit-content;
+            margin: 25px auto 0;
+            padding: 14px 25px;
+            background: #2e7d32;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🦟 ¡Alto a los Mosquitos!</h1>
+        <p>Pequeñas acciones pueden ayudar a prevenirlos</p>
+    </header>
+
+    <nav>
+        <a href="#problema">¿Por qué aparecen?</a>
+        <a href="#prevencion">Prevención</a>
+        <a href="#tips">Tips</a>
+        <a href="#mensaje">Mensaje</a>
+    </nav>
+
+    <section id="problema">
+        <h2>💧 ¿Por qué aparecen los mosquitos?</h2>
+
+        <p class="intro">
+            Los mosquitos pueden reproducirse en lugares donde existe agua acumulada.
+            Por eso, mantener nuestros espacios limpios y eliminar los posibles
+            criaderos es una de las principales formas de prevenirlos.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <span>💧</span>
+                <h3>Agua acumulada</h3>
+                <p>
+                    Baldes, botellas, llantas y recipientes pueden acumular agua
+                    y convertirse en lugares donde se reproduzcan los mosquitos.
+                </p>
+            </div>
+
+            <div class="card">
+                <span>🌧️</span>
+                <h3>Lluvias</h3>
+                <p>
+                    Después de las lluvias pueden quedar pequeños depósitos
+                    de agua en patios, jardines y objetos abandonados.
+                </p>
+            </div>
+
+            <div class="card">
+                <span>🗑️</span>
+                <h3>Basura</h3>
+                <p>
+                    Los objetos y recipientes abandonados pueden favorecer
+                    la acumulación de agua y atraer mosquitos.
+                </p>
+            </div>
+
+            <div class="card">
+                <span>🌿</span>
+                <h3>Falta de limpieza</h3>
+                <p>
+                    Los espacios descuidados pueden tener más lugares donde
+                    se acumule agua y se escondan los mosquitos.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="prevencion">
+        <h2>🛡️ ¿Cómo podemos prevenirlos?</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <span>🪣</span>
+                <h3>Elimina el agua</h3>
+                <p>
+                    Vacía los recipientes que tengan agua acumulada.
+                </p>
+            </div>
+
+            <div class="card">
+                <span>🔒</span>
+                <h3>Tapa los recipientes</h3>
+                <p>
+                    Mantén tapados los tanques y recipientes que almacenen agua.
+                </p>
+            </div>
+
+            <div class="card">
+                <span>🧹</span>
+                <h3>Mantén limpio</h3>
+                <p>
+                    Limpia patios, jardines, canales y lugares donde pueda
+                    acumularse agua.
+                </p>
+            </div>
+
+            <div class="card">
+                <span>🪟</span>
+                <h3>Usa mosquiteros</h3>
+                <p>
+                    Los mosquiteros pueden ayudar a evitar que los mosquitos
+                    entren a las habitaciones.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="tips" class="tips">
+        <h2>⭐ Tips para prevenir los mosquitos</h2>
+
+        <ul>
+            <li>💧 Revisa regularmente los lugares donde pueda acumularse agua.</li>
+            <li>🪣 Vacía y limpia los recipientes que almacenen agua.</li>
+            <li>🗑️ Recoge botellas, latas y otros objetos que puedan acumular agua.</li>
+            <li>🌧️ Después de una lluvia, revisa patios y jardines.</li>
+            <li>🏠 Mantén limpios los alrededores de tu casa.</li>
+            <li>🪟 Utiliza mosquiteros en puertas y ventanas cuando sea posible.</li>
+            <li>👕 Cuando sea necesario, usa ropa que cubra brazos y piernas.</li>
+        </ul>
+    </section>
+
+
+    <section id="mensaje">
+        <h2>🌎 Nuestro mensaje</h2>
+
+        <p class="intro">
+            Prevenir los mosquitos comienza con acciones sencillas.
+            Si todos ayudamos a mantener nuestros espacios limpios y
+            eliminamos los lugares donde puedan reproducirse, podemos
+            contribuir a tener un ambiente más saludable.
+        </p>
+
+        <div class="important">
+            <strong>💚 Recuerda:</strong>
+            No se trata solamente de eliminar mosquitos, sino de evitar
+            que encuentren lugares donde puedan reproducirse.
+        </div>
+
+        <a href="#prevencion" class="button">
+            🛡️ Ver consejos de prevención
+        </a>
+    </section>
+
+
+    <footer>
+        <p>🦟 ¡Alto a los Mosquitos! | Proyecto educativo 🌿</p>
+        <p>Prevenir es tarea de todos.</p>
+    </footer>
+
+</body>
+</html>
