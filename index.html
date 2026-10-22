@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#126b50">
+  <meta name="description" content="Aprende a prevenir los mosquitos y el dengue cuidando tu hogar y tu comunidad.">
+  <title>¡Mosquitos bajo control! | Prevención</title>
+
+  <style>
+    :root {
+      --verde: #126b50;
+      --verde-claro: #dff5e7;
+      --fondo: #f5fbf4;
+      --texto: #203c32;
+      --naranja: #ffcf82;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--fondo);
+      color: var(--texto);
+      line-height: 1.7;
+    }
+
+    header {
+      background: rgba(255,255,255,.96);
+      padding: 15px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      box-shadow: 0 3px 15px #164b3010;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--verde);
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--verde);
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #e58b32;
+    }
+
+    .hero {
+      padding: 75px 8%;
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      align-items: center;
+      gap: 35px;
+      background: linear-gradient(135deg, #dff5e7, #fff3d9);
+      border-radius: 0 0 45px 45px;
+    }
+
+    .etiqueta {
+      display: inline-block;
+      background: white;
+      color: var(--verde);
+      border-radius: 30px;
+      padding: 6px 16px;
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1.15;
+      margin: 18px 0;
+      color: #104e3b;
+    }
+
+    h1 span {
+      color: #e58b32;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+    }
+
+    .boton {
+      display: inline-block;
+      background: var(--verde);
+      color: white;
+      padding: 13px 23px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 12px;
+      transition: .2s;
+    }
+
+    .boton:hover {
+      transform: translateY(-3px);
+      background: #0b4936;
+    }
+
+    .dibujo {
+      font-size: clamp(6rem, 15vw, 12rem);
+      text-align: center;
+      background: #ffffffa8;
+      border-radius: 50%;
+      padding: 25px;
+      filter: drop-shadow(0 12px 15px #164b3010);
+    }
+
+    section {
+      padding: 65px 8%;
+      scroll-margin-top: 25px;
+    }
+
+    .titulo {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .titulo h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      color: var(--verde);
+      margin-bottom: 5px;
+    }
+
+    .tarjetas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .tarjeta {
+      background: white;
+      padding: 25px;
+      border-radius: 22px;
+      box-shadow: 0 8px 25px #19472b0b;
+      border: 1px solid #e4eee4;
+      transition: transform .2s;
+    }
+
+    .tarjeta:hover {
+      transform: translateY(-5px);
+    }
+
+    .emoji {
+      font-size: 2.8rem;
+    }
+
+    .tarjeta h3 {
+      color: var(--verde);
+      margin-bottom: 8px;
+    }
+
+    .alerta {
+      background: #fff0d8;
+      border-left: 6px solid #e99a3b;
+      border-radius: 15px;
+      padding: 24px;
+      margin-top: 30px;
+    }
+
+    .pasos {
+      max-width: 760px;
+      margin: auto;
+      background: white;
+      border-radius: 24px;
+      padding: 25px;
+      box-shadow: 0 8px 25px #19472b0b;
+    }
+
+    .pasos label {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+      padding: 13px 0;
+      border-bottom: 1px solid #edf1eb;
+      cursor: pointer;
+    }
+
+    .pasos input {
+      accent-color: var(--verde);
+      width: 20px;
+      height: 20px;
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    .mensaje {
+      background: var(--verde);
+      color: white;
+      text-align: center;
+      border-radius: 28px;
+      padding: 40px 25px;
+    }
+
+    .mensaje h2 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    footer {
+      background: #103e30;
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        justify-content: center;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 45px 7%;
+      }
+
+      .dibujo {
+        max-width: 240px;
+        margin: auto;
+      }
+
+      section {
+        padding: 45px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">🌿 Mosquitos bajo control</div>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#riesgos">Riesgos</a>
+      <a href="#prevencion">Prevención</a>
+      <a href="#compromiso">Mi compromiso</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div>
+        <span class="etiqueta">💚 Cuidemos nuestra comunidad</span>
+        <h1>¡Juntos podemos mantener los <span>mosquitos</span> bajo control!</h1>
+        <p>
+          Pequeñas acciones en casa pueden hacer una gran diferencia.
+          Aprende cómo evitar los criaderos de mosquitos y proteger
+          a tu familia del dengue.
+        </p>
+        <a class="boton" href="#prevencion">🌱 Aprende a prevenir</a>
+      </div>
+      <div class="dibujo" aria-label="Naturaleza y protección">🌿🦟</div>
+    </section>
+
+    <section id="riesgos">
+      <div class="titulo">
+        <h2>🔎 ¿Por qué debemos prevenirlos?</h2>
+        <p>El agua estancada puede convertirse en un lugar de reproducción.</p>
+      </div>
+
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <div class="emoji">🪣</div>
+          <h3>Canecas sin tapa</h3>
+          <p>El agua almacenada sin cubrir puede permitir que los mosquitos pongan sus huevos.</p>
+        </article>
+
+        <article class="tarjeta">
+          <div class="emoji">🛞</div>
+          <h3>Llantas y recipientes</h3>
+          <p>Los objetos que acumulan agua de lluvia pueden convertirse en criaderos.</p>
+        </article>
+
+        <article class="tarjeta">
+          <div class="emoji">🪴</div>
+          <h3>Plantas y materas</h3>
+          <p>Revisa los platos de las materas y evita que acumulen agua durante varios días.</p>
+        </article>
+
+        <article class="tarjeta">
+          <div class="emoji">🦟</div>
+          <h3>El mosquito Aedes aegypti</h3>
+          <p>Es uno de los principales transmisores del dengue. Se reproduce en recipientes con agua acumulada.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="prevencion">
+      <div class="titulo">
+        <h2>🌼 6 formas de prevenir los mosquitos</h2>
+        <p>¡Convierte estos hábitos en parte de tu rutina!</p>
+      </div>
+
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <div class="emoji">🪣</div>
+          <h3>1. Tapa el agua</h3>
+          <p>Mantén los tanques y recipientes de almacenamiento bien tapados.</p>
+        </article>
+
+        <article class="tarjeta">
+          <div class="emoji">🧹</div>
+          <h3>2. Elimina el agua acumulada</h3>
+          <p>Vacía, lava y voltea los recipientes que no estés utilizando.</p>
+        </article>
+
+        <article class="tarjeta">
+          <div class="emoji">🧽</div>
+          <h3>3. Lava los recipientes</h3>
+          <p>Frota las paredes internas de los recipientes para retirar posibles huevos.</p>
+        </article>
+
+        <article class="tarjeta">
+          <div class="emoji">🪟</div>
+          <h3>4. Protege tu hogar</h3>
+          <p>Usa angeos o mallas en puertas y ventanas cuando sea posible.</p>
+        </article>
+
+        <article class="tarjeta">
+          <div class="emoji">👕</div>
+          <h3>5. Protégete de las picaduras</h3>
+          <p>Usa ropa que cubra la piel y repelente siguiendo las indicaciones de su etiqueta.</p>
+        </article>
+
+        <article class="tarjeta">
+          <div class="emoji">🤝</div>
+          <h3>6. Trabaja en equipo</h3>
+          <p>Invita a tu familia y vecinos a mantener limpios patios, jardines y alrededores.</p>
+        </article>
+      </div>
+
+      <div class="alerta">
+        <strong>⚠️ ¡Importante!</strong>
+        No basta con cambiar el agua: lava y frota las paredes de los recipientes.
+        Realiza revisiones frecuentes y sigue las recomendaciones de las autoridades de salud.
+      </div>
+    </section>
+
+    <section id="compromiso">
+      <div class="titulo">
+        <h2>✅ Mi lista de prevención</h2>
+        <p>Marca las acciones que ya realizaste hoy.</p>
+      </div>
+
+      <div class="pasos">
+        <label><input type="checkbox"> Revisé los recipientes con agua.</label>
+        <label><input type="checkbox"> Tapé los tanques y las canecas.</label>
+        <label><input type="checkbox"> Eliminé el agua estancada.</label>
+        <label><input type="checkbox"> Limpié el patio y los alrededores.</label>
+        <label><input type="checkbox"> Compartí estos consejos con mi familia.</label>
+        <p>🌱 ¡Cada acción cuenta para tener un entorno más saludable!</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="mensaje">
+        <h2>💚 ¡El cambio empieza en casa!</h2>
+        <p>Sin criaderos, hay menos mosquitos. Con prevención, cuidamos a toda la comunidad.</p>
+        <a class="boton" href="#inicio"
+           style="background:white;color:#126b50">
+          Volver al inicio ↑
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>🌿 <strong>Proyecto educativo: Prevención de mosquitos</strong></p>
+    <p>Elaborado por Mariana Parra y Juliana Rojas</p>
+    <p>💚 Por hogares más limpios y comunidades más saludables.</p>
+  </footer>
+
+</body>
+</html>
