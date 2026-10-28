@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>¡Mosquitos bajo control!</title>
+
+<style>
+:root {
+  --verde: #176b45;
+  --verde-claro: #dff5e5;
+  --fondo: #f5fff6;
+  --blanco: #ffffff;
+  --texto: #244333;
+  --amarillo: #fff0b8;
+  --rojo: #ffe1df;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.7;
+}
+
+header {
+  background: linear-gradient(135deg, #125638, #46a86a);
+  color: white;
+  text-align: center;
+  padding: 55px 20px;
+}
+
+header h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  margin-bottom: 10px;
+}
+
+header p {
+  max-width: 750px;
+  margin: auto;
+  font-size: 1.1rem;
+}
+
+nav {
+  background: #104d32;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  background: #39865b;
+}
+
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 45px 20px;
+}
+
+h2 {
+  color: var(--verde);
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+h3 {
+  color: var(--verde);
+}
+
+.intro {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 4px 15px #0000000c;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 4px 14px #00000010;
+  border-bottom: 5px solid #6ebd83;
+}
+
+.icono {
+  font-size: 3rem;
+  display: block;
+  text-align: center;
+}
+
+.card h3 {
+  text-align: center;
+}
+
+.aviso {
+  background: var(--amarillo);
+  border-left: 6px solid #e0ae21;
+  border-radius: 12px;
+  padding: 18px;
+  margin: 20px 0;
+}
+
+.peligro {
+  background: var(--rojo);
+  border-left: 6px solid #d95750;
+  border-radius: 12px;
+  padding: 18px;
+  margin: 20px 0;
+}
+
+.boton {
+  display: inline-block;
+  background: var(--verde);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.boton:hover {
+  background: #104d32;
+}
+
+.paso {
+  background: var(--verde-claro);
+  border-radius: 14px;
+  padding: 16px;
+  margin: 12px 0;
+}
+
+label {
+  display: block;
+  background: white;
+  padding: 12px;
+  border-radius: 10px;
+  margin: 9px 0;
+  cursor: pointer;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin-right: 8px;
+}
+
+#resultado,
+#progreso,
+#resultadoReto {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+footer {
+  background: #104d32;
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+}
+
+footer p {
+  margin: 7px;
+}
+
+.barra {
+  width: 100%;
+  background: #d7e8da;
+  height: 18px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#relleno {
+  height: 100%;
+  width: 0;
+  background: #2e9955;
+  transition: width 0.3s;
+}
+
+@media (max-width: 600px) {
+  nav {
+    position: static;
+  }
+
+  section {
+    padding: 30px 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header id="inicio">
+  <div style="font-size:65px">🦟🌿💧</div>
+  <h1>¡Mosquitos bajo control!</h1>
+  <p>
+    Aprende, previene y protege tu comunidad.
+    Un proyecto educativo sobre la prevención de los mosquitos,
+    desarrollado con apoyo de herramientas digitales e inteligencia artificial.
+  </p>
+  <a class="boton" href="#prevencion"
+     style="background:white;color:#176b45">
+     ¡Aprende a prevenir!
+  </a>
+</header>
+
+<nav aria-label="Navegación principal">
+  <a href="#inicio">Inicio</a>
+  <a href="#conoce">Conócelos</a>
+  <a href="#ciclo">Ciclo de vida</a>
+  <a href="#enfermedades">Enfermedades</a>
+  <a href="#criaderos">Criaderos</a>
+  <a href="#prevencion">Prevención</a>
+  <a href="#reto">Mi reto</a>
+  <a href="#quiz">Cuestionario</a>
+  <a href="#copilot">Copilot e IA</a>
+  <a href="#conclusion">Conclusión</a>
+</nav>
+
+<main>
+
+<section>
+  <div class="intro">
+    <h2>🌎 ¡Bienvenidos!</h2>
+    <p>
+      Los mosquitos pueden parecer pequeños e inofensivos, pero algunas
+      especies transmiten enfermedades que afectan a las personas.
+      Por eso, aprender a prevenir su reproducción es importante
+      para cuidar nuestra salud.
+    </p>
+    <p>
+      En esta página encontrarás información, recomendaciones,
+      actividades y preguntas para aprender a reconocer los criaderos
+      y saber qué puedes hacer para evitarlos.
+    </p>
+    <p><strong>¡Cada pequeña acción cuenta!</strong></p>
+  </div>
+</section>
+
+<section id="conoce">
+  <h2>🦟 1. Conoce a los mosquitos</h2>
+
+  <p>
+    Los mosquitos son insectos que viven en muchos lugares del mundo.
+    Las hembras de numerosas especies necesitan sangre para desarrollar
+    sus huevos. Sin embargo, no todos los mosquitos se alimentan igual
+    ni transmiten las mismas enfermedades.
+  </p>
+
+  <div class="grid">
+    <article class="card">
+      <span class="icono">🔎</span>
+      <h3>¿Cómo son?</h3>
+      <p>
+        Son insectos pequeños, con seis patas, alas y una estructura
+        bucal que algunas especies utilizan para picar y alimentarse.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="icono">💧</span>
+      <h3>¿Dónde se reproducen?</h3>
+      <p>
+        Muchas especies se reproducen en ambientes acuáticos.
+        El mosquito Aedes aegypti puede utilizar recipientes con
+        agua acumulada alrededor de las viviendas.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="icono">🌡️</span>
+      <h3>¿Qué favorece su desarrollo?</h3>
+      <p>
+        La disponibilidad de agua y las condiciones ambientales
+        adecuadas pueden favorecer su reproducción. El desarrollo
+        suele ser más rápido en condiciones cálidas.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="icono">🛡️</span>
+      <h3>¿Cómo nos protegemos?</h3>
+      <p>
+        Eliminando criaderos, usando barreras como mallas en las
+        ventanas y utilizando repelentes de acuerdo con sus instrucciones.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="ciclo">
+  <h2>🔬 2. El ciclo de vida del mosquito</h2>
+
+  <p>
+    Los mosquitos pasan por cuatro etapas de desarrollo.
+    Conocerlas ayuda a comprender por qué es tan importante
+    eliminar los criaderos.
+  </p>
+
+  <div class="grid">
+    <article class="card">
+      <span class="icono">🥚</span>
+      <h3>1. Huevo</h3>
+      <p>
+        La hembra deposita sus huevos en lugares apropiados
+        para la especie. En el caso del Aedes aegypti,
+        puede hacerlo cerca de la superficie del agua
+        o en las paredes de recipientes.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="icono">🪱</span>
+      <h3>2. Larva</h3>
+      <p>
+        La larva vive en el agua y se alimenta mientras crece.
+        En esta etapa puede observarse moviéndose dentro
+        de recipientes con agua.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="icono">💧</span>
+      <h3>3. Pupa</h3>
+      <p>
+        En esta etapa el mosquito continúa su transformación.
+        La pupa también se encuentra en el agua.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="icono">🦟</span>
+      <h3>4. Adulto</h3>
+      <p>
+        Finalmente emerge el mosquito adulto.
+        Después puede reproducirse y comenzar un nuevo ciclo.
+      </p>
+    </article>
+  </div>
+
+  <div class="aviso">
+    <strong>¡Dato importante!</strong>
+    El tiempo que tarda el ciclo depende de la especie
+    y de las condiciones ambientales. Eliminar el agua
+    acumulada y limpiar los recipientes ayuda a interrumpir
+    la reproducción.
+  </div>
+</section>
+
+<section id="enfermedades">
+  <h2>⚠️ 3. Enfermedades transmitidas por mosquitos</h2>
+
+  <p>
+    Algunos mosquitos pueden transmitir virus y otros agentes
+    que causan enfermedades. El Aedes aegypti puede transmitir
+    dengue, zika y chikungunya.
+  </p>
+
+  <div class="grid">
+    <article class="card">
+      <span class="icono">🩺</span>
+      <h3>Dengue</h3>
+      <p>
+        Puede producir fiebre, dolor de cabeza, molestias
+        musculares y dolor detrás de los ojos. Los signos
+        de alarma requieren atención médica urgente.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="icono">🩺</span>
+      <h3>Zika</h3>
+      <p>
+        Puede causar fiebre leve, sarpullido, ojos rojos
+        y dolor en las articulaciones. La infección durante
+        el embarazo puede ocasionar complicaciones.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="icono">🩺</span>
+      <h3>Chikungunya</h3>
+      <p>
+        Puede provocar fiebre y dolor intenso en las
+        articulaciones, que en algunas personas persiste
+        durante bastante tiempo.
+      </p>
+    </article>
+  </div>
+
+  <div class="peligro">
+    <strong>¡Cuida tu salud!</strong>
+    Si tienes síntomas que te preocupan, busca orientación
+    de un profesional de la salud. Si aparecen signos de
+    alarma, acude a un servicio médico de inmediato.
+    No te automediques.
+  </div>
+</section>
+
+<section id="criaderos">
+  <h2>💧 4. Lugares donde pueden criarse</h2>
+
+  <p>
+    A veces, los criaderos están en objetos cotidianos que
+    no revisamos con frecuencia. Observa estos ejemplos:
+  </p>
+
+  <div class="grid">
+    <article class="card">
+      <span class="icono">🪣</span>
+      <h3>Canecas sin tapa</h3>
+      <p>
+        El agua acumulada en recipientes descubiertos puede
+        permitir que los mosquitos pongan sus huevos.
+        Mantén los depósitos bien tapados y límpialos regularmente.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="icono">🛞</span>
+      <h3>Llantas abandonadas</h3>
+      <p>
+        Las llantas pueden recoger agua de lluvia.
+        Guárdalas bajo techo o evita que acumulen agua.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="icono">🍼</span>
+      <h3>Botellas y envases</h3>
+      <p>
+        Los recipientes tirados al aire libre pueden llenarse
+        de agua. Recógelos y deposítalos correctamente.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="icono">🪴</span>
+      <h3>Platos de materas</h3>
+      <p>
+        Revisa que no acumulen agua durante mucho tiempo
+        y límpialos con frecuencia.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="icono">🏠</span>
+      <h3>Canaletas y desagües</h3>
+      <p>
+        Retira hojas y residuos de manera segura para evitar
+        obstrucciones que retengan agua.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="icono">🪥</span>
+      <h3>Otros recipientes</h3>
+      <p>
+        Revisa bebederos de animales, floreros y otros
+        recipientes que puedan acumular agua. Límpialos
+        y cambia el agua según corresponda.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="prevencion">
+  <h2>🛡️ 5. ¿Cómo prevenir los mosquitos?</h2>
+
+  <div class="grid">
+    <article class="card">
+      <span class="icono">🪣</span>
+      <h3>Tapa los recipientes</h3>
+      <p>
+        Mantén los tanques y las canecas de almacenamiento
+        de agua bien cubiertos.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="icono">🧹</span>
+      <h3>Limpia los patios</h3>
+      <p>
+        Recoge los residuos y revisa los lugares donde
+        pueda acumularse agua.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="icono">🧽</span>
+      <h3>Lava los recipientes</h3>
+      <p>
+        Vacía, cepilla y limpia los recipientes regularmente
+        para retirar posibles huevos.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="icono">🪟</span>
+      <h3>Instala mallas</h3>
+      <p>
+        Las mallas en puertas y ventanas ayudan a impedir
+        que los mosquitos entren a la vivienda.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="icono">🧴</span>
+      <h3>Utiliza repelente</h3>
+      <p>
+        Elige un producto adecuado y sigue sus instrucciones
+        de uso y las precauciones indicadas en la etiqueta.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="icono">👨‍👩‍👧‍👦</span>
+      <h3>Trabaja en equipo</h3>
+      <p>
+        Comparte estas recomendaciones con tu familia,
+        compañeros y vecinos.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="reto">
+  <h2>✅ 6. Mi reto semanal de prevención</h2>
+
+  <p>
+    Marca las acciones que ya realizaste. La página calculará
+    tu progreso según las casillas seleccionadas.
+  </p>
+
+  <label><input type="checkbox" class="tarea">
+    Revisé las canecas y los tanques de agua.
+  </label>
+
+  <label><input type="checkbox" class="tarea">
+    Comprobé que los recipientes estuvieran tapados.
+  </label>
+
+  <label><input type="checkbox" class="tarea">
+    Eliminé agua acumulada en objetos innecesarios.
+  </label>
+
+  <label><input type="checkbox" class="tarea">
+    Revisé las materas y sus platos.
+  </label>
+
+  <label><input type="checkbox" class="tarea">
+    Recogí residuos que podían acumular agua.
+  </label>
+
+  <label><input type="checkbox" class="tarea">
+    Compartí consejos de prevención con mi familia.
+  </label>
+
+  <div class="barra">
+    <div id="relleno"></div>
+  </div>
+
+  <p id="progreso">Tu progreso: 0 de 6 acciones.</p>
+  <p id="resultadoReto"></p>
+
+  <button class="boton" onclick="reiniciarReto()">
+    Reiniciar mi lista
+  </button>
+</section>
+
+<section id="quiz">
+  <h2>🧠 7. Pon a prueba tus conocimientos</h2>
+
+  <p>Responde estas preguntas y comprueba cuánto aprendiste.</p>
+
+  <form id="cuestionario">
+
+    <div class="paso">
+      <p><strong>1. ¿Cuál es una medida importante para prevenir los mosquitos?</strong></p>
+
+      <label><input type="radio" name="p1" value="a">
+        Dejar recipientes llenos de agua.
+      </label>
+
+      <label><input type="radio" name="p1" value="b">
+        Eliminar el agua acumulada y tapar los depósitos.
+      </label>
+
+      <label><input type="radio" name="p1" value="c">
+        Acumular botellas en el patio.
+      </label>
+    </div>
+
+    <div class="paso">
+      <p><strong>2. ¿Cuáles son las cuatro etapas del mosquito?</strong></p>
+
+      <label><input type="radio" name="p2" value="a">
+        Huevo, larva, pupa y adulto.
+      </label>
+
+      <label><input type="radio" name="p2" value="b">
+        Semilla, planta, flor y fruto.
+      </label>
+
+      <label><input type="radio" name="p2" value="c">
+        Huevo, pez, rana y adulto.
+      </label>
+    </div>
+
+    <div class="paso">
+      <p><strong>3. ¿Qué herramienta de IA utilizamos como apoyo en el proyecto?</strong></p>
+
+      <label><input type="radio" name="p3" value="a">
+        Una calculadora.
+      </label>
+
+      <label><input type="radio" name="p3" value="b">
+        Microsoft Copilot.
+      </label>
+
+      <label><input type="radio" name="p3" value="c">
+        Un reproductor de música.
+      </label>
+    </div>
+
+    <div class="paso">
+      <p><strong>4. ¿Qué debemos hacer con la información generada por Copilot?</strong></p>
+
+      <label><input type="radio" name="p4" value="a">
+        Copiarla sin leerla.
+      </label>
+
+      <label><input type="radio" name="p4" value="b">
+        Suponer que siempre es correcta.
+      </label>
+
+      <label><input type="radio" name="p4" value="c">
+        Revisarla y comprobar los datos importantes.
+      </label>
+    </div>
+
+    <div class="paso">
+      <p><strong>5. ¿Cuál es una ventaja de utilizar Copilot?</strong></p>
+
+      <label><input type="radio" name="p5" value="a">
+        Puede ayudarnos a organizar ideas.
+      </label>
+
+      <label><input type="radio" name="p5" value="b">
+        Elimina la necesidad de aprender.
+      </label>
+
+      <label><input type="radio" name="p5" value="c">
+        Nunca comete errores.
+      </label>
+    </div>
+
+    <button class="boton" type="submit">
+      Comprobar respuestas
+    </button>
+  </form>
+
+  <p id="resultado" aria-live="polite"></p>
+
+  <button class="boton" onclick="reiniciarQuiz()">
+    Volver a intentarlo
+  </button>
+</section>
+
+<section id="copilot">
+  <h2>🤖 8. ¿Cómo utilizamos Copilot en este proyecto?</h2>
+
+  <div class="intro">
+    <p>
+      Microsoft Copilot es un asistente de inteligencia artificial
+      que puede ayudar a investigar, explicar temas, organizar ideas
+      y orientar la creación de contenidos digitales.
+    </p>
+
+    <p>
+      En nuestro proyecto lo utilizamos como herramienta de apoyo
+      para trabajar el tema de la prevención de los mosquitos y
+      organizar la información de nuestra página web.
+    </p>
+  </div>
+
+  <div class="grid">
+    <article class="card">
+      <span class="icono">💡</span>
+      <h3>Generación de ideas</h3>
+      <p>
+        Nos ayudó a explorar ideas para presentar el tema
+        y decidir qué información incluir.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="icono">📝</span>
+      <h3>Organización</h3>
+      <p>
+        Nos orientó para dividir el contenido en secciones,
+        como introducción, prevención y conclusión.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="icono">💻</span>
+      <h3>Desarrollo web</h3>
+      <p>
+        Podemos utilizar sus sugerencias como apoyo para
+        comprender y organizar el código HTML y CSS.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="icono">🔍</span>
+      <h3>Revisión</h3>
+      <p>
+        Aprendimos que debemos revisar la información,
+        corregir errores y comprobar los datos importantes.
+      </p>
+    </article>
+  </div>
+
+  <h3>Ventajas de Copilot</h3>
+  <ul>
+    <li>Ayuda a organizar información.</li>
+    <li>Permite hacer preguntas y aclarar dudas.</li>
+    <li>Propone ideas para desarrollar proyectos.</li>
+    <li>Puede orientar la elaboración de código.</li>
+  </ul>
+
+  <h3>Desventajas y precauciones</h3>
+  <ul>
+    <li>Puede proporcionar respuestas incorrectas.</li>
+    <li>Necesita instrucciones claras para entender lo solicitado.</li>
+    <li>No reemplaza nuestro pensamiento ni nuestro esfuerzo.</li>
+    <li>Es necesario verificar la información importante.</li>
+  </ul>
+
+  <div class="aviso">
+    <strong>Uso responsable de la IA:</strong>
+    Copilot debe servir como apoyo para aprender, no para
+    reemplazar nuestro trabajo. Es importante comprender
+    las respuestas, aportar ideas propias y seguir las
+    indicaciones del docente.
+  </div>
+</section>
+
+<section id="conclusion">
+  <h2>📚 9. Conclusión del proyecto</h2>
+
+  <div class="intro">
+    <p>
+      La prevención de los mosquitos es importante para cuidar
+      la salud y mantener nuestros espacios limpios. Acciones
+      como tapar los recipientes, eliminar el agua estancada
+      y revisar los patios pueden ayudar a reducir los criaderos.
+    </p>
+
+    <p>
+      Durante este proyecto también aprendimos que la inteligencia
+      artificial puede ser una herramienta útil para investigar,
+      organizar información y desarrollar una página web.
+      Sin embargo, es necesario revisar sus respuestas y utilizarla
+      de manera responsable.
+    </p>
+
+    <p>
+      En conclusión, combinamos la tecnología con la educación
+      para compartir información útil con nuestra comunidad.
+      Aprendimos que la IA puede ayudarnos a crear, pero que
+      nosotros debemos comprender, revisar y mejorar nuestro trabajo.
+    </p>
+  </div>
+</section>
+
+<section id="compromiso">
+  <h2>💚 10. Mi compromiso con la prevención</h2>
+
+  <div class="intro">
+    <p>
+      Me comprometo a revisar los lugares donde se pueda
+      acumular agua, mantener limpios mis espacios y compartir
+      información preventiva con las personas que me rodean.
+    </p>
+
+    <p>
+      También me comprometo a utilizar la inteligencia artificial
+      de forma responsable, verificar la información y aprovechar
+      la tecnología para aprender cos
